@@ -14,20 +14,32 @@ public class MyToys {
     //cF: compute factorial, tinh n! =1.2.3...n
     //0!=1
     //n! tang nhanh lam nen de kieu long
-    public static long cF(int n) {
+    
+    //public static long cF(int n) {
+    //    if (n < 0 || n > 15) {
+    //        throw new IllegalArgumentException("Sorry! n must >= 0");
+    //    }
+    //    if (n == 0) {
+    //        return 1;
+    //    } else {
+    //        long result = 1;
+    //        for (int i = 1; i <= n; i++) {
+    //            result *= i;
+    //        }
+    //        return result;
+    //    }
+    //}
+    public static long cF(int n){
         if (n < 0 || n > 15) {
-            throw new IllegalArgumentException("Sorry! n must >= 0");
+           throw new IllegalArgumentException("Sorry! n must >= 0");
         }
-        if (n == 0) {
+        if(n==0){
             return 1;
-        } else {
-            long result = 1;
-            for (int i = 1; i <= n; i++) {
-                result *= i;
-            }
-            return result;
+        }else{
+            return n*cF(n-1);
         }
     }
+    
     //mọi đoạn code bạn viết ra, phải cố gắng đảm bảo rằng nó có chất lượng
     //chất lượng nghĩa là: hàm trả về, xử lý đúng như mình dự kiến, kì vọng 
     //expected 
